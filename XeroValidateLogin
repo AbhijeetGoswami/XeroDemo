@@ -1,0 +1,28 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class xero{
+
+public static void validatelogin() throws InterruptedException, IOException{
+		
+		driver.get("https://www.xero.com/"));//get the Xero URl
+		driver.findElement(By.id("email"));// Login Attempt with invalid credentials
+		driver.sendkeys(abhijeetg033@gmail.com);
+    driver.findElement(By.id("password"));		
+    driver.sendkeys(WrongPassword);
+    driver.submit();
+    driver.Sleep(2000);
+    WebElement ele     = driver.findElement(By.text("Your email or password is incorrect"));
+    String response    = ele.getText();
+    String errorresponse   = "Your email or password is incorrect";
+    if(assertEquals (response, errorresponse))// using assert to validate 
+    driver.quit();
+    else
+    driver.findElement(By.id("logout")).click();
+    }
+	
+	public static void main(String[] args){
+	 xero a= new a;
+	 a.validatelogin();// on run the driver window will close the browser if assert passes and will logout if assert fails. 
+	}
+	}
